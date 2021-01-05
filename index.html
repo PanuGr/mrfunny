@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="I've created a simple interactive game. Have fun!"
+    />
+    <meta name="keywords" content="fun facts, short jokes, game" />
+    <link rel="stylesheet preload" as="style" href="assets/style.css" />
+    <meta name="author" content="Panagiotis Panagiotakopoulos" />
+    <link
+      rel="shortcut icon"
+      href="assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>Listen to Mr. Funny</title>
+  </head>
+  <body>
+    <h1>Welcome! Mr. Funny is excited to share his knowledge with you.</h1>
+    <main>
+      <section tabindex="0">
+        <section class="card">
+          <figure class="front">
+            <img
+              src="assets/dog-with-googles.jpg"
+              alt="A dog wearing glasses"
+            />
+          </figure>
+          <figure class="back">
+            <h2>Interesting fact or joke?</h2>
+            <button>Click me!</button>
+          </figure>
+        </section>
+      </section>
+      <section tabindex="0">
+        <section class="card">
+          <figure class="front">
+            <img
+              src="assets/wallet.jpg"
+              alt="Travelling map and coffee on a table"
+            />
+          </figure>
+          <figure class="back">
+            <h2>How much tip should I pay?💰💭</h2>
+            <form>
+              <input
+                type="number"
+                placeholder="total amount of cost"
+                id="cost"
+                aria-label="total cost"
+              />
+              <br />
+              <p>Quality of Service you got:</p>
+              <label for="excellent">excellent</label>
+              <input
+                type="radio"
+                name="quality"
+                id="excellent"
+                value="excellent"
+                aria-label="excellent"
+              />
+              <br />
+              <label for="good">good</label>
+              <input
+                type="radio"
+                name="quality"
+                id="good"
+                value="good"
+                aria-label="good"
+              />
+              <br />
+              <label for="ok">ok</label>
+              <input
+                type="radio"
+                name="quality"
+                id="ok"
+                value="ok"
+                aria-label="ok"
+              />
+              <br />
+              <input
+                type="submit"
+                value="Check my wallet"
+                aria-label="check my wallet"
+                onclick="qualityCheck();return false;"
+              />
+            </form>
+          </figure>
+        </section>
+      </section>
+      <section tabindex="0">
+        <section class="card">
+          <figure class="front">
+            <img src="assets/space.jpg" alt="An astronaut" />
+          </figure>
+          <figure class="back">
+            <h2>Your weight on other planets🪐</h2>
+            <p>
+              Though an object’s mass remains consistent throughout the
+              universe, weight is determined by the force of gravity on an
+              object. <br />
+              Since different planets have different gravity, the same object
+              would weigh different amounts on each of those planets! Cool, huh?
+            </p>
+            <form>
+              <label for="weight">Your weight on Earth:</label>
+              <input type="number" id="weight" placeholder="kg" /> <br />
+              <label for="planets">Choose a planet:</label>
+              <select id="planets">
+                <option value="mercury">Mercury</option>
+                <option value="venus">Venus</option>
+                <option value="mars">Mars</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="saturn">Saturn</option>
+                <option value="uranus">Uranus</option>
+                <option value="neptune">Neptune</option>
+                <option value="pluto">Pluto</option>
+                <option value="moon">Moon</option>
+              </select>
+              <br />
+              <input
+                type="submit"
+                value="Check your weight"
+                aria-label="check your weight"
+                onclick="calculateWeight();return false;"
+              />
+            </form>
+          </figure>
+        </section>
+      </section>
+      <section tabindex="0">
+        <section class="card">
+          <figure class="front">
+            <img
+              src="assets/whales.jpg"
+              alt="A pair of blue whales"
+            />
+          </figure>
+          <figure class="back">
+            <h2>Speak like the whales 🐳</h2>
+            <p>
+              Type your text below and see how it'd be in a whale's language
+            </p>
+            <form>
+              <textarea id="text" maxlength="100"></textarea>
+              <br />
+              <input
+                type="submit"
+                value="Translate"
+                aria-label="translate"
+                onclick="whale();return false;"
+              />
+            </form>
+          </figure>
+        </section>
+      </section>
+      <section tabindex="0">
+        <section class="card">
+          <figure class="front">
+            <img
+              src="assets/sleep.jpg"
+              alt="A woman in bed, who just woke up"
+            />
+          </figure>
+          <figure class="back">
+            <h2>How many hours of sleep do you still need?😴</h2>
+            <p>
+              Every person needs around 8 hours of sleep every day. When we
+              don't get enough sleep our body collects sleep-dept. <br />
+              Add below the hours that you have slept and see how much
+              sleep-dept you have.
+            </p>
+            <form>
+              <label for="monday">Monday</label>
+              <input type="number" name="days" id="monday" /> <br />
+              <label for="tuesday">Tuesday</label>
+              <input type="number" name="days" id="tuesday" /> <br />
+              <label for="wednesday">Wednesday</label>
+              <input type="number" name="days" id="wednesday" /> <br />
+              <label for="thursday">Thursday</label>
+              <input type="number" name="days" id="thursday" /> <br />
+              <label for="friday">Friday</label>
+              <input type="number" name="days" id="friday" /> <br />
+              <label for="saturday">Saturday</label>
+              <input type="number" name="days" id="saturday" /> <br />
+              <label for="sunday">Sunday</label>
+              <input type="number" name="days" id="sunday" /> <br />
+              <input
+                type="submit"
+                value="Sleep Dept"
+                onclick="calculateSleepDebt(); return false;"
+                aria-label="sleep dept"
+              />
+            </form>
+          </figure>
+        </section>
+      </section>
+      <section tabindex="0">
+        <section class="card">
+          <figure class="front">
+            <img
+              src="assets/tempCalc-small.jpg"
+              alt="A thermometer"
+            />
+          </figure>
+          <figure class="back">
+            <h2>Temperature converter</h2>
+            <p>Add either a Celsius or Fahrenheit temperature to convert</p>
+            <form>
+              <label for="celsius">Temperature</label>
+              <input
+                type="number"
+                id="temperature"
+                aria-label="temperature"
+                placeholder="Celsius/Fahrenheit"
+              />
+              <input
+                type="submit"
+                value="Convert to Fahrenheit"
+                onclick="convertToF(); return false;"
+                aria-label="submit "
+              />
+              <input
+                type="submit"
+                value="Convert to Celsius"
+                onclick="convertToC(); return false;"
+                aria-label="submit "
+              />
+            </form>
+          </figure>
+        </section>
+      </section>
+      <section tabindex="0">
+        <section class="card">
+          <figure class="front">
+            <img
+              src="assets/petCalc-small.jpg"
+              alt="A dog and a cat"
+            />
+          </figure>
+          <figure class="back">
+            <h2>How old is your pet in human-years?</h2>
+            <p></p>
+            <form>
+              <label for="myAge">The age of your pet</label>
+              <input
+                type="number"
+                id="myAge"
+                aria-label="Type the age of your pet"
+              />
+              <input
+                type="submit"
+                value="How old is your dog in human years? 🐶"
+                onclick="dogToHuman();return false;"
+                aria-label="submit "
+              />
+              <input
+                type="submit"
+                value="How old is your cat in human years? 🐱"
+                aria-label="submit"
+                onclick="catToHuman();return false;"
+              />
+              <input
+                type="submit"
+                value="How old is your rabbit in human years? 🐰"
+                aria-label="submit"
+                onclick="rabbitToHuman();return false;"
+              />
+            </form>
+          </figure>
+        </section>
+      </section>
+    </main>
+    <script src="aseets/smallFun.js"></script>
+    <script src="aseets/calculators.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"
+      integrity="sha512-/A6lxqQJVUIMnx8B/bx/ERfeuJnqoWPJdUxN8aBj+tZYL35O998ry7UUGoN65PSUNlJNrqKZrDENi4i1c3zy4Q=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a72b9e7ca4.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
