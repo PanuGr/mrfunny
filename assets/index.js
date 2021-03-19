@@ -8,7 +8,7 @@ If you like this project, you can find more of my projects on my personal site: 
 Enjoy 😀`)
     }
 }
-//window.addEventListener('load', welcome)
+window.addEventListener('load', welcome)
 
 //RANDOM ANSWERS
 document.querySelector('button').addEventListener('click', fact)
@@ -142,8 +142,7 @@ const getSleepHours = () => {
     return array.reduce((a, b) => { return a + b });
 };
 const calculateSleepDebt = () => {
-    const SleepHours = getSleepHours();
-    const idealHours = 49;
+    const SleepHours = getSleepHours(), idealHours = 49;
     if (SleepHours === idealHours) {
         alert("You sleep perfectly");
     } else if (SleepHours > idealHours) {
