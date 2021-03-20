@@ -13,6 +13,7 @@ window.addEventListener('load', welcome)
 //RANDOM ANSWERS
 document.querySelector('button').addEventListener('click', fact)
 function fact() {
+    let randomNumber=Math.floor(Math.random() * 9);
     const facts = confirm(`Do you wanna know some interesting facts?🤓`);
     if (facts === false) {
         const joke = confirm('Very well. Would you like to hear a joke instead?😃');
@@ -25,26 +26,14 @@ function fact() {
                 "What is an astronaut's favorite part on a computer?...The space bar", "Once my dog ate all the Scrabble tiles...He kept leaving little messages around the house",
                 "Did you hear about the two people who stole a calendar?...They both got 6 months"
             ];
-            for (
-                let i = Math.floor(Math.random() * 9);
-                i < jokeSentence.length;
-            ) {
-                alert(jokeSentence[i]);
-                break;
-            };
+            alert( jokeSentence[randomNumber]);
         }
 
     } else {
         let fact = ["The hashtag symbol is technically called an octothorpe.", "Banging your head against a wall for one hour burns 150 calories.", "Some cats are allergic to people.",
             "The unicorn is the national animal of Scotland.", "M&M stands for Mars and Murrie.", "Coca-Cola was the first soft drink in space.", "About 700 grapes go into one bottle of wine.",
-            "The speed of a computer mouse is measured in 'Mickeys.'", "If Facebook was a country, it would have 1 billion more people than China."];
-        for (
-            let i = Math.floor(Math.random() * 9);
-            i < fact.length;
-        ) {
-            alert(fact[i]);
-            break;
-        };
+            "The speed of a computer mouse is measured in Mickeys.", "If Facebook was a country, it would have 1 billion more people than China."];
+            alert(fact[randomNumber]);
     }
 }
 
