@@ -37,26 +37,6 @@ function fact() {
     }
 }
 
-//TIP CALCULATOR
-const qualityList = document.getElementsByName('quality');
-const qualityCheck = () => {
-    for (let i = 0; i < qualityList.length; i++) {
-        if (qualityList[i].checked) {
-            const cost = parseInt(document.getElementById('cost').value);
-            switch (qualityList[i].value) {
-                case "ok":
-                    alert(cost * 0.10 + "€");
-                    break;
-                case "good":
-                    alert(cost * 0.15 + "€");
-                    break;
-                case "excellent":
-                    alert(cost * 0.20 + "€");
-                    break;
-            }
-        }
-    }
-};
 
 //WEIGHT ON DIFFERENT PLANETS
 const calculateWeight = () => {
