@@ -1,10 +1,10 @@
 {
   "name": "mrfunny",
-  "version": "1.0.0",
+  "version": "2",
   "description": "This project contains a series of small javascript applications, mostly calculators.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./TDD/test.js"
+    
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/PanuGr/mrfunny/issues"
   },
-  "homepage": "https://github.com/PanuGr/mrfunny#readme",
-  "devDependencies": {
-    "mocha": "^8.3.2"
-  }
+  "homepage": "https://github.com/PanuGr/mrfunny#readme"
 }
