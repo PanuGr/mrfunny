@@ -20,6 +20,7 @@
     extensions = [
       "html-validate.vscode-html-validate"
       "yandeu.five-server"
+      "dbaeumer.vscode-eslint"
     ];
 
     # Enable previews
