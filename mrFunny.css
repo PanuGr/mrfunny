@@ -67,7 +67,6 @@ h1 {
 
 h2 {
     font-size: clamp(1.25rem, 4vw, 1.75rem);
-    font-family: var(--font-subheading);
 }
 
 p {
@@ -155,7 +154,6 @@ textarea {
     border-radius: var(--radius-sm);
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-text);
-    font-family: var(--font-body);
     transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
@@ -192,7 +190,6 @@ button {
     border-radius: var(--radius-lg);
     background-color: var(--color-accent);
     color: var(--color-text);
-    font-family: var(--font-subheading);
     font-size: 1rem;
     cursor: pointer;
     transition: background-color var(--transition-fast), transform var(--transition-fast);
