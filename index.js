@@ -1,10 +1,10 @@
 // Main module for Mr. Funny's Interactive Calculators
-import { setupModal } from './modules/modal.js';
-import { setupFactJokeGenerator } from './modules/factJoke.js';
-import { setupWeightCalculator } from './modules/weightCalculator.js';
-import { setupWhaleTranslator } from './modules/whaleTranslator.js';
-import { setupSleepCalculator } from './modules/sleepCalculator.js';
-import { setupTemperatureConverter } from './modules/temperatureConverter.js';
+import { setupModal } from './modules/modal-module.js';
+import { setupFactJokeGenerator } from './modules/factjoke-module.js';
+import { setupWeightCalculator } from './modules/weight-module.js';
+import { setupWhaleTranslator } from './modules/whale-module.js';
+import { setupSleepCalculator } from './modules/sleep-module.js';
+import { setupTemperatureConverter } from './modules/temperature-module.js';
 import { setupPetAgeCalculator } from './modules/petAgeCalculator.js';
 
 // Initialize the modal system first as other modules will use it
@@ -14,7 +14,7 @@ const modal = setupModal();
 document.addEventListener('DOMContentLoaded', () => {
   // Display welcome message
   showWelcomeMessage();
-  
+
   // Initialize all calculator modules
   setupFactJokeGenerator(modal);
   setupWeightCalculator(modal);
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function showWelcomeMessage() {
   setTimeout(() => {
     const userName = localStorage.getItem('userName');
-    
+
     if (!userName) {
       modal.show({
         title: 'Welcome!',
