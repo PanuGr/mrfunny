@@ -4,118 +4,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="I've created a simple interactive game. Have fun!">
-  <meta name="keywords" content="fun facts, short jokes, game">
+  <meta name="description"
+    content="A collection of fun interactive calculators and tools. Convert weights between planets, translate to whale language, calculate sleep debt, and more!">
+  <meta name="keywords" content="fun facts, calculators, jokes, interactive tools, weight converter">
   <link rel="stylesheet" href="mrFunny.css">
   <meta name="author" content="Panagiotis Panagiotakopoulos">
-  <title>Listen to Mr. Funny</title>
+  <title>Mr. Funny's Interactive Calculators</title>
 </head>
 
 <body>
-  <h1>Welcome! Mr. Funny is excited to share his knowledge with you.</h1>
+  <header>
+    <h1>Welcome to Mr. Funny's Interactive Calculators</h1>
+    <p>Explore fun tools and calculators to brighten your day!</p>
+  </header>
+
   <main>
-    <section>
-      <h2>Interesting fact or joke?</h2>
-      <button type="button">Click me!</button>
+    <section class="calculator-card" aria-labelledby="fact-joke-title">
+      <h2 id="fact-joke-title">Interesting Fact or Joke?</h2>
+      <button type="button" id="fact-joke-btn" aria-label="Get a random fact or joke">Click me!</button>
     </section>
 
-
-    <section>
-      <h2>Your weight on other planets🪐</h2>
+    <section class="calculator-card" aria-labelledby="weight-title">
+      <h2 id="weight-title">Your Weight on Other Planets 🪐</h2>
       <p>
-        Though an object’s mass remains consistent throughout the
+        Though an object's mass remains consistent throughout the
         universe, weight is determined by the force of gravity on an
-        object. <br>
-        Since different planets have different gravity, the same object
-        would weigh different amounts on each of those planets! Cool, huh?
+        object. Different planets have different gravity, changing how much you would weigh!
       </p>
-      <form>
-        <label for="weight">Your weight on Earth:</label>
-        <input type="number" id="weight" placeholder="kg"> <br>
-        <label for="planets">Choose a planet:</label>
-        <select id="planets">
-          <option value="mercury">Mercury</option>
-          <option value="venus">Venus</option>
-          <option value="mars">Mars</option>
-          <option value="jupiter">Jupiter</option>
-          <option value="saturn">Saturn</option>
-          <option value="uranus">Uranus</option>
-          <option value="neptune">Neptune</option>
-          <option value="pluto">Pluto</option>
-          <option value="moon">Moon</option>
-        </select>
-        <br>
-        <button type="submit" onclick="calculateWeight();return false;">Check your weight </button>
+      <form id="weight-form">
+        <div class="form-group">
+          <label for="weight">Your weight on Earth (kg):</label>
+          <input type="number" id="weight" placeholder="Enter weight in kg" min="0" required
+            aria-describedby="weight-help">
+          <small id="weight-help" class="form-text">Enter your weight in kilograms</small>
+        </div>
+
+        <div class="form-group">
+          <label for="planets">Choose a planet:</label>
+          <select id="planets" required>
+            <option value="mercury">Mercury</option>
+            <option value="venus">Venus</option>
+            <option value="mars">Mars</option>
+            <option value="jupiter">Jupiter</option>
+            <option value="saturn">Saturn</option>
+            <option value="uranus">Uranus</option>
+            <option value="neptune">Neptune</option>
+            <option value="pluto">Pluto</option>
+            <option value="moon">Moon</option>
+          </select>
+        </div>
+
+        <button type="submit" id="weight-btn" aria-label="Calculate your weight on selected planet">Check Your
+          Weight</button>
       </form>
+      <div id="weight-result" class="result-display" aria-live="polite"></div>
     </section>
 
-
-    <section>
-      <h2>Speak like the whales 🐳</h2>
+    <section class="calculator-card" aria-labelledby="whale-title">
+      <h2 id="whale-title">Speak Like the Whales 🐳</h2>
       <p>
-        Type your text below and see how it'd be in a whale's language
+        Type your text below and see how it would sound in whale language
       </p>
-      <form>
-        <textarea id="text" maxlength="100"></textarea>
-        <br>
-        <button type="submit" onclick="whale();return false;">Translate</button>
+      <form id="whale-form">
+        <div class="form-group">
+          <label for="text">Your text:</label>
+          <textarea id="text" maxlength="100" placeholder="Type something here..."
+            aria-describedby="whale-help"></textarea>
+          <small id="whale-help" class="form-text">The whale language keeps only vowels and doubles 'e' and 'u'</small>
+        </div>
+        <button type="submit" id="whale-btn" aria-label="Translate to whale language">Translate</button>
       </form>
+      <div id="whale-result" class="result-display" aria-live="polite"></div>
     </section>
 
-    <section>
-      <h2>How many hours of sleep do you still need?😴</h2>
+    <section class="calculator-card" aria-labelledby="sleep-title">
+      <h2 id="sleep-title">Sleep Debt Calculator 😴</h2>
       <p>
-        Every person needs around 8 hours of sleep every day. When we
-        don't get enough sleep our body collects sleep-dept. <br>
-        Add below the hours that you have slept and see how much
-        sleep-dept you have.
+        The recommended amount is 7 hours of sleep per day. Add your actual sleep hours below to calculate your sleep
+        debt.
       </p>
-      <form>
-        <label for="monday">Monday</label>
-        <input type="number" min="1" max="24" id="monday"> <br>
-        <label for="tuesday">Tuesday</label>
-        <input type="number" min="1" max="24" id="tuesday"> <br>
-        <label for="wednesday">Wednesday</label>
-        <input type="number" min="1" max="24" id="wednesday"> <br>
-        <label for="thursday">Thursday</label>
-        <input type="number" min="1" max="24" id="thursday"> <br>
-        <label for="friday">Friday</label>
-        <input type="number" min="1" max="24" id="friday"> <br>
-        <label for="saturday">Saturday</label>
-        <input type="number" min="1" max="24" id="saturday"> <br>
-        <label for="sunday">Sunday</label>
-        <input type="number" min="1" max="24" id="sunday"> <br>
-        <button type="submit" onclick="calculateSleepDebt(); return false;">Sleep Dept</button>
+      <form id="sleep-form">
+        <div class="form-group days-grid">
+          <label for="monday">Monday:</label>
+          <input type="number" name="monday" id="monday" min="0" max="24" step="0.5" placeholder="Hours">
+
+          <label for="tuesday">Tuesday:</label>
+          <input type="number" name="tuesday" id="tuesday" min="0" max="24" step="0.5" placeholder="Hours">
+
+          <label for="wednesday">Wednesday:</label>
+          <input type="number" name="wednesday" id="wednesday" min="0" max="24" step="0.5" placeholder="Hours">
+
+          <label for="thursday">Thursday:</label>
+          <input type="number" name="thursday" id="thursday" min="0" max="24" step="0.5" placeholder="Hours">
+
+          <label for="friday">Friday:</label>
+          <input type="number" name="friday" id="friday" min="0" max="24" step="0.5" placeholder="Hours">
+
+          <label for="saturday">Saturday:</label>
+          <input type="number" name="saturday" id="saturday" min="0" max="24" step="0.5" placeholder="Hours">
+
+          <label for="sunday">Sunday:</label>
+          <input type="number" name="days" id="sunday" min="0" max="24" step="0.5" placeholder="Hours">
+        </div>
+
+        <button type="submit" id="sleep-btn" aria-label="Calculate your sleep debt">Calculate Sleep Debt</button>
       </form>
+      <div id="sleep-result" class="result-display" aria-live="polite"></div>
     </section>
 
-    <section>
-      <h2>Temperature converter</h2>
-      <p>Add either a Celsius or Fahrenheit temperature to convert</p>
-      <form>
-        <label for="temperature">Temperature</label>
-        <input type="number" id="temperature" aria-label="temperature" placeholder="Celsius/Fahrenheit">
-        <button type="submit" onclick="convertToF(); return false;">Convert to Fahrenheit</button>
+    <section class="calculator-card" aria-labelledby="temp-title">
+      <h2 id="temp-title">Temperature Converter</h2>
+      <p>Convert temperatures between Celsius and Fahrenheit</p>
+      <form id="temp-form">
+        <div class="form-group">
+          <label for="temperature">Temperature:</label>
+          <input type="number" id="temperature" placeholder="Enter temperature" step="0.1" required
+            aria-describedby="temp-help">
+          <small id="temp-help" class="form-text">Enter a temperature value to convert</small>
+        </div>
 
-        <button type="submit" onclick="convertToC(); return false;">Convert to Celsius</button>
-
+        <div class="button-group">
+          <button type="submit" id="to-fahrenheit" aria-label="Convert to Fahrenheit">To Fahrenheit</button>
+          <button type="button" id="to-celsius" aria-label="Convert to Celsius">To Celsius</button>
+        </div>
       </form>
+      <div id="temp-result" class="result-display" aria-live="polite"></div>
     </section>
 
-    <section>
-      <h2>How old is your pet in human-years?</h2>
-      <p></p>
-      <form>
-        <label for="myAge">The age of your pet</label>
-        <input type="number" id="myAge" aria-label="Type the age of your pet">
-        <button type="submit" onclick="dogToHuman();return false;">How old is your dog? 🐶</button>
-        <button type="submit" onclick="catToHuman();return false;">How old is your cat? 🐱</button>
-        <button type="submit" onclick="rabbitToHuman();return false;">How old is your rabbit? 🐰</button>
-      </form>
-    </section>
+    <section class="calculator-card" aria-labelledby="pet-title">
+      <h2 id="pet-title">Pet Age Calculator</h2>
+      <p>Find out how old your pet would be in human years</p>
+      <form id="pet-form">
+        <div class="form-group">
+          <label for="myAge">Your pet's age in years:</label>
+          <input type="number" id="myAge" min="0.1" step="0.1" placeholder="Pet's age" required
+            aria-describedby="pet-help">
+          <small id="pet-help" class="form-text">Enter your pet's age in years</small>
+        </div>
 
+        <div class="button-group">
+          <button type="submit" id="dog-btn" aria-label="Calculate dog age in human years">Dog Age 🐶</button>
+          <button type="button" id="cat-btn" aria-label="Calculate cat age in human years">Cat Age 🐱</button>
+          <button type="button" id="rabbit-btn" aria-label="Calculate rabbit age in human years">Rabbit Age 🐰</button>
+        </div>
+      </form>
+      <div id="pet-result" class="result-display" aria-live="polite"></div>
+    </section>
   </main>
-  <script src="index.js"></script>
+
+  <footer>
+    <small>Created with ❤️ <a href="http://digisolutech.netlify.app/">by Panagiotis Panagiotakopoulos</a></small>
+  </footer>
+
+  <div id="modal" class="modal" aria-modal="true" aria-labelledby="modal-title" role="dialog" hidden>
+    <div class="modal-content">
+      <span id="close-modal" class="close-btn" aria-labelledby="Close">&times;</span>
+      <h2 id="modal-title">Message</h2>
+      <p id="modal-message"></p>
+      <button type="button" id="modal-ok" aria-label="Acknowledge message">OK</button>
+    </div>
+  </div>
+
+  <script src="index.js" type="module"></script>
 </body>
 
 </html>
