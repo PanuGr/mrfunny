@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   whaleTranslator();
   setupSleepCalculator();
   setupTemperatureConverter();
-  /*  
-   setupPetAgeCalculator(modal); */
+  setupPetAgeCalculator();
 });
 
 document.getElementById('fact-joke-btn').addEventListener('click', factsORjokes);

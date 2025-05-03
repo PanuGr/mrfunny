@@ -1,5 +1,5 @@
 // petAgeCalculator.js - Pet age calculator functionality
-export const setupPetAgeCalculator = (modal) => {
+export const setupPetAgeCalculator = () => {
     const petForm = document.getElementById('pet-form');
     const petResult = document.getElementById('pet-result');
     const dogBtn = document.getElementById('dog-btn');
@@ -14,7 +14,7 @@ export const setupPetAgeCalculator = (modal) => {
         petResult.classList.add('error');
         return null;
       }
-      
+      petResult.classList.add('active');
       return parseFloat(ageInput.value);
     };
     
