@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   weightCalculator();
   whaleTranslator();
   setupSleepCalculator();
+  setupTemperatureConverter();
   /*  
-   setupTemperatureConverter(modal);
    setupPetAgeCalculator(modal); */
 });
 
