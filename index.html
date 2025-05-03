@@ -35,9 +35,7 @@
       <form id="weight-form">
         <div class="form-group">
           <label for="weight">Your weight on Earth (kg):</label>
-          <input type="number" id="weight" placeholder="Enter weight in kg" min="0" required
-            aria-describedby="weight-help">
-          <small id="weight-help" class="form-text">Enter your weight in kilograms</small>
+          <input type="number" id="weight" placeholder="Enter your weight in kilograms" min="1" required>
         </div>
 
         <div class="form-group">
@@ -69,9 +67,7 @@
       <form id="whale-form">
         <div class="form-group">
           <label for="text">Your text:</label>
-          <textarea id="text" maxlength="100" placeholder="Type something here..."
-            aria-describedby="whale-help"></textarea>
-          <small id="whale-help" class="form-text">The whale language keeps only vowels and doubles 'e' and 'u'</small>
+          <textarea id="text" maxlength="100" placeholder="Type something here..."></textarea>
         </div>
         <button type="submit" id="whale-btn" aria-label="Translate to whale language">Translate</button>
       </form>
@@ -119,9 +115,7 @@
       <form id="temp-form">
         <div class="form-group">
           <label for="temperature">Temperature:</label>
-          <input type="number" id="temperature" placeholder="Enter temperature" step="0.1" required
-            aria-describedby="temp-help">
-          <small id="temp-help" class="form-text">Enter a temperature value to convert</small>
+          <input type="number" id="temperature" placeholder="Enter a temperature value to convert" step="0.1" required>
         </div>
 
         <div class="button-group">
@@ -138,9 +132,7 @@
       <form id="pet-form">
         <div class="form-group">
           <label for="myAge">Your pet's age in years:</label>
-          <input type="number" id="myAge" min="0.1" step="0.1" placeholder="Pet's age" required
-            aria-describedby="pet-help">
-          <small id="pet-help" class="form-text">Enter your pet's age in years</small>
+          <input type="number" id="myAge" min="1" step="1" placeholder="Enter your pet's age in years" required>
         </div>
 
         <div class="button-group">
@@ -156,14 +148,6 @@
   <footer>
     <small>Created with ❤️ <a href="http://digisolutech.netlify.app/">by Panagiotis Panagiotakopoulos</a></small>
   </footer>
-
-  <div id="modal" class="modal" aria-modal="true" aria-labelledby="modal-title" role="dialog" hidden>
-    <div class="modal-content">
-      <span id="close-modal" class="close-btn" aria-labelledby="Close">&times;</span>
-      <h2 id="modal-title">Message</h2>
-      <p id="modal-message"></p>
-      <button type="button" id="modal-ok" aria-label="Acknowledge message">OK</button>
-    </div>
-  </div>
 </body>
+
 </html>
