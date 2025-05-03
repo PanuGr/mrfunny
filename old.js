@@ -10,72 +10,7 @@ Enjoy 😀`)
 }
 window.addEventListener('load', welcome)
 
-//RANDOM ANSWERS
-document.querySelector('button').addEventListener('click', fact)
-function fact() {
-    let randomNumber = Math.floor(Math.random() * 9);
-    const facts = confirm(`Do you wanna know some interesting facts?🤓`);
-    if (facts === false) {
-        const joke = confirm('Very well. Would you like to hear a joke instead?😃');
-        if (joke === true) {
-            let jokeSentence = ["What's the best thing about Switzerland?...I don't know, but the flag is a big plus",
-                "Hear about the new restaurant called Karma?...There's no menu. You get what you deserve",
-                "Why don't scientists trust atoms?...Because they make up everything", "How do you drown a hipster?...Throw him in the mainstream",
-                "What did the left eye say to the right eye?...Between you and me, something smells",
-                "What do you call a magic dog?...A labracadabrador", "What did the shark say when he ate the clownfish?...This tastes a little funny",
-                "What is an astronaut's favorite part on a computer?...The space bar", "Once my dog ate all the Scrabble tiles...He kept leaving little messages around the house",
-                "Did you hear about the two people who stole a calendar?...They both got 6 months"
-            ];
-            alert(jokeSentence[randomNumber]);
-        }
 
-    } else {
-        let fact = ["The hashtag symbol is technically called an octothorpe.", "Banging your head against a wall for one hour burns 150 calories.", "Some cats are allergic to people.",
-            "The unicorn is the national animal of Scotland.", "M&M stands for Mars and Murrie.", "Coca-Cola was the first soft drink in space.", "About 700 grapes go into one bottle of wine.",
-            "The speed of a computer mouse is measured in Mickeys.", "If Facebook was a country, it would have 1 billion more people than China."];
-        alert(fact[randomNumber]);
-    }
-}
-
-
-//WEIGHT ON DIFFERENT PLANETS
-const calculateWeight = () => {
-    const planetList = document.getElementsByTagName('option');
-    const earthWeight = parseFloat(document.getElementById('weight').value);
-    for (let i = 0; i < planetList.length; i++) {
-        if (planetList[i].selected) {
-            switch (planetList[i].value) {
-                case 'mercury':
-                    alert(Math.round(earthWeight * 0.37, 2) + 'kg');
-                    break;
-                case 'venus':
-                    alert(Math.round(earthWeight * 0.887, 2) + 'kg');
-                    break;
-                case 'mars':
-                    alert(Math.round(earthWeight * 0.3711, 2) + 'kg');
-                    break;
-                case 'jupiter':
-                    alert(Math.round(earthWeight * 2.479, 2) + 'kg');
-                    break;
-                case 'saturn':
-                    alert(Math.round(earthWeight * 1.044, 2) + 'kg');
-                    break;
-                case 'uranus':
-                    alert(Math.round(earthWeight * 0.887, 2) + 'kg');
-                    break;
-                case 'neptune':
-                    alert(Math.round(earthWeight * 1.115, 2) + 'kg');
-                    break;
-                case 'pluto':
-                    alert(Math.round(earthWeight * 0.062, 2) + 'kg');
-                    break;
-                case 'moon':
-                    alert(Math.round(earthWeight * 0.162, 2) + 'kg');
-                    break;
-            }
-        }
-    }
-}
 
 //WHALE LANGUAGE
 const whale = () => {

@@ -225,7 +225,7 @@ button {
     transition: opacity var(--transition-fast);
 }
 
-.result-display.show {
+.result-display.active {
     opacity: 1;
 }
 

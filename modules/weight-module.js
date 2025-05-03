@@ -1,24 +1,20 @@
-/**
- * Module for handling the weight calculator functionality
- * @param {Object} modal - Modal dialog interface
- */
-export function setupWeightCalculator(modal) {
+export function weightCalculator() {
   const weightForm = document.getElementById('weight-form');
   const weightInput = document.getElementById('weight');
   const planetSelect = document.getElementById('planets');
   const resultDisplay = document.getElementById('weight-result');
   
   // Planet gravity factors relative to Earth
-  const PLANET_FACTORS = {
-    mercury: 0.37,
-    venus: 0.887,
-    mars: 0.3711,
-    jupiter: 2.479,
-    saturn: 1.044,
-    uranus: 0.887,
-    neptune: 1.115,
-    pluto: 0.062,
-    moon: 0.162
+    const PLANET_FACTORS = {
+    mercury: 0.38,
+    venus: 0.91,
+    mars: 0.38,
+    jupiter: 2.34,
+    saturn: 1.06,
+    uranus: 0.92,
+    neptune: 1.19,
+    pluto: 0.06,
+    moon: 0.16
   };
   
   // Planet emoji representations
@@ -55,7 +51,6 @@ export function setupWeightCalculator(modal) {
       showError('Please enter a valid weight (a positive number)');
       return;
     }
-    
     calculateWeight();
   });
   
@@ -63,13 +58,8 @@ export function setupWeightCalculator(modal) {
    * Shows an error message in the modal
    * @param {string} message - Error message to display
    */
-  function showError(message) {
-    modal.show({
-      title: 'Error',
-      message: `<p>${message}</p>`
-    });
-    
-    resultDisplay.textContent = '';
+  function showError(message) {  
+    resultDisplay.textContent = message;
     resultDisplay.classList.remove('active');
   }
   
@@ -92,12 +82,7 @@ export function setupWeightCalculator(modal) {
     
     // Display the result
     const resultText = `On ${selectedPlanet} ${emoji} (${description}), you would weigh ${planetWeight} kg.`;
-    
-    modal.show({
-      title: `Your Weight on ${selectedPlanet.charAt(0).toUpperCase() + selectedPlanet.slice(1)}`,
-      message: `<p>${resultText}</p>`
-    });
-    
+        
     // Also update the result display area
     resultDisplay.textContent = resultText;
     resultDisplay.classList.add('active');
