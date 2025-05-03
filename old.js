@@ -13,24 +13,7 @@ window.addEventListener('load', welcome)
 
 
 //WHALE LANGUAGE
-const whale = () => {
-    let input = document.getElementById('text').value;
-    const vowels = ["a", "e", "o", "i", "u"];
-    let resultArray = [];
-    for (let i = 0; i < input.length; i++) {
-        for (let j = 0; j < vowels.length; j++) {
-            if (input[i] === vowels[j]) {
-                resultArray.push(input[i]);
-                if (input[i] === "e") {
-                    resultArray.push("e");
-                } else if (input[i] === "u") {
-                    resultArray.push("u");
-                }
-            }
-        }
-    }
-    document.getElementById('text').value = resultArray.join("");
-};
+
 
 //SLEEP CALCULATOR
 const getSleepHours = () => {
